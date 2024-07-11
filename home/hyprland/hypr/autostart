@@ -42,8 +42,8 @@ blueman-applet &
 nm-applet --indicator &
 
 # cursor & touchpad gestures
-hyprctl setcursor Sweet-cursors 24 &
-libinput-gestures-setup start &
+hyprctl setcursor Bibata-Modern-Classic 16 &
+#libinput-gestures-setup start &
 
 # clipboard
 wl-paste --type text --watch cliphist store &  # store text data
