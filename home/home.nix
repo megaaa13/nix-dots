@@ -49,11 +49,15 @@
     swayosd
     wofi
     hyprshot
+    hyprpicker
     ranger
     pavucontrol
     networkmanagerapplet
     swaynotificationcenter
     prismlauncher
+    ferdium
+    pywal
+    cava
   ];
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -99,7 +103,6 @@
       size = 16;
     };
   };
-
   gtk = {
     enable = true;
     theme = {

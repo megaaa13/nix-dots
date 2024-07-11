@@ -3,6 +3,7 @@
     "position": "top",
     //"height": 24,  nixos logo  memory
     "spacing": 0,
+    "reload_style_on_change": true,
     "modules-center": ["hyprland/workspaces", "hyprland/window"],
     "modules-left": ["cpu", "custom/gpu", "memory", "temperature", "disk", "network"],
     "modules-right": ["pulseaudio", "tray", "custom/spotify", "custom/chwp", "custom/notifications", "clock"],
@@ -10,6 +11,7 @@
         "format": " {usage}%"
     },
     "custom/gpu": {
+	"interval" : 5,
         "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
         "format": "󰢮 {}%",
         "tooltip": false
