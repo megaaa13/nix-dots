@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -17,7 +17,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "tower"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -114,13 +114,23 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware = {
-	opengl.enable = true;
-	nvidia.modesetting.enable = true;
-	nvidia.powerManagement.enable = false;
-	nvidia.powerManagement.finegrained = false;
-	nvidia.open = false;
-	nvidia.nvidiaSettings = true;
-	nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+    opengl.enable = true;
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+      open = false;
+      nvidiaSettings = true;
+      # New nvidia driver, in order to FIX THE FCKING XWAYLAND ISSUE (and then the gaming on it !)
+      package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+        version = "555.58";
+        sha256_64bit = "sha256-bXvcXkg2kQZuCNKRZM5QoTaTjF4l2TtrsKUvyicj5ew=";
+        sha256_aarch64 = lib.fakeSha256;
+        openSha256 = lib.fakeSha256;
+        settingsSha256 = "sha256-vWnrXlBCb3K5uVkDFmJDVq51wrCoqgPF03lSjZOuU8M=";
+        persistencedSha256 = lib.fakeSha256;
+      };
+    };
   };
 
   xdg.portal.enable = true;
