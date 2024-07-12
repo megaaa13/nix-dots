@@ -21,8 +21,9 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
+@import                          "~/.cache/wal/rofi-colors.rasi" /* Pywal */
 @import                          "shared/fonts.rasi"
+/* Pywal */
 
 * {
     border-colour:               var(selected);
@@ -194,15 +195,15 @@ element {
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            var(normal-background);
+    background-color:            transparent;
     text-color:                  var(normal-foreground);
 }
 element normal.urgent {
-    background-color:            var(urgent-background);
+    background-color:            transparent;
     text-color:                  var(urgent-foreground);
 }
 element normal.active {
-    background-color:            var(active-background);
+    background-color:            transparent;
     text-color:                  var(active-foreground);
 }
 element selected.normal {
@@ -210,23 +211,23 @@ element selected.normal {
     text-color:                  var(selected);
 }
 element selected.urgent {
-    background-color:            var(selected-urgent-background);
+    background-color:            transparent;
     text-color:                  var(selected-urgent-foreground);
 }
 element selected.active {
-    background-color:            var(selected-active-background);
+    background-color:            transparent;
     text-color:                  var(selected-active-foreground);
 }
 element alternate.normal {
-    background-color:            var(alternate-normal-background);
+    background-color:            transparent;
     text-color:                  var(alternate-normal-foreground);
 }
 element alternate.urgent {
-    background-color:            var(alternate-urgent-background);
+    background-color:            transparent;
     text-color:                  var(alternate-urgent-foreground);
 }
 element alternate.active {
-    background-color:            var(alternate-active-background);
+    background-color:            transparent;
     text-color:                  var(alternate-active-foreground);
 }
 element-icon {

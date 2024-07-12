@@ -22,7 +22,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
+@import                          "~/.cache/wal/rofi-colors.rasi" /* Pywal */
 @import                          "shared/fonts.rasi"
 
 * {

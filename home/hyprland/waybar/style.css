@@ -5,6 +5,8 @@
 /*
 * Catppuccin Mocha palette
 */
+/* BIG PROBLEM HERE... not dynamic !! */
+@import                          "../../.cache/wal/colors-waybar.css";
 
 @define-color base #1e1e2e;
 @define-color mantle #181825;
@@ -207,7 +209,7 @@
 }
 
 #window {
-  color: @sapphire;
+  color: @color5;
 }
 
 /* =============================== */
@@ -217,7 +219,7 @@
 #cpu,
 #memory,
 #cpu {
-  color: #25b7e4;
+  color: @color1;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   margin-left: 10px;
@@ -225,28 +227,28 @@
 }
 
 #memory {
-  color: #25b7e4;
+  color: @color4;
   border-radius: 0px;
   margin-left: 0px;
   padding-left: 5px;
   padding-right: 5px;
 }
 #custom-gpu {
-  color: #76B900;
+  color: @color6;
   border-radius: 0px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
 #temperature {
-  color: #25b7e4;
+  color: @color1;
   border-radius: 0px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
 #disk {
-  color: #25b7e4;
+  color: @color2;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-right: 10px;
@@ -264,14 +266,14 @@
 /* =============================== */
 /* Clock Module */
 #clock {
-  color: #25b7e4;
+  color: @color3;
   margin-right: 10px;
 }
 
 /* =============================== */
 /* Network Module */
 #network {
-  color: #25b7e4;
+  color: @color3;
   /* margin-right: 10px;
   padding-left: 5px; */
   /* padding-right: 1rem; */
@@ -282,7 +284,7 @@
 /* =============================== */
 /* PulseAudio Module */
 #pulseaudio {
-  color: #25b7e4;
+  color: @color3;
   /* border-radius: 0px; */
   /* margin-right: 0px; */
   /* padding-left: 5px; */
@@ -293,7 +295,7 @@
 }
 
 #custom-spotify {
-  color: #1DB954;
+  color: @color6;
   /* border-radius: 0px; */
   /* margin-right: 0px; */
   /* padding-left: 5px; */
@@ -303,7 +305,7 @@
 }
 
 #custom-chwp {
-  color: #25b7e4;
+  color: @color2;
   padding-left: 5px;
   border-radius: 0px;
 }
@@ -379,7 +381,7 @@
 
 /* Notifications Module */
 #custom-notifications {
-  color: #25b7e4;
+  color: @color2;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 5px;

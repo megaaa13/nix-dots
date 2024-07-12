@@ -21,8 +21,8 @@ file_extension="${filename##*.}"
 file_extension=$(tr [:upper:] [:lower:] <<< "$file_extension")
 
 if [[ " ${supported_formats[@]} " =~ " $file_extension " ]]; then
-  swww img ~/Pictures/wallpapers/$filename -o $currentoutput --transition-type center --transition-fps 60 --transition-bezier .56,1.02,.72,.3
-  ln -sf ~/Pictures/wallpapers/$filename $HOME/.config/hypr/scripts/.current-wallpaper
+  swww img ~/Pictures/wallpapers/$filename -o $currentoutput --transition-type fade --transition-fps 60 --transition-bezier 1,.08,.39,.79
+  wal -nteq -i ~/Pictures/wallpapers/$filename
 else
   notify-send "Wallpaper" "$filename seems to not be a image file."
 fi

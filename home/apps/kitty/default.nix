@@ -9,6 +9,7 @@
       extraConfig = ''
       background_opacity 0.7
       background_blur 1
+      include ~/.cache/wal/colors-kitty.conf
       '';
     };
   };
