@@ -50,5 +50,5 @@ wl-paste --type text --watch cliphist store &  # store text data
 wl-paste --type image --watch cliphist store & # store image data
 
 # idle
-swayidle -w timeout 600 "hyprlock" before-sleep "hyprlock" & # lock screen after 10 min of idle
+swayidle -w timeout 600 "pidof hyprlock || hyprlock" before-sleep "pidof hyprlock || hyprlock" & # lock screen after 10 min of idle
 swayidle -w timeout 1200 "systemctl suspend" &             # hibernate after 20 mins of idle

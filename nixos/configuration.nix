@@ -51,7 +51,6 @@
     extraGroups = [ "networkmanager" "wheel" "input" ];
   };
 
-  sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
 	enable = true;
@@ -111,12 +110,17 @@
 	NIXOS_OZONE_WL = "1";
   };
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   security.pam.services.hyprlock = { };
   
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
     nvidia = {
       modesetting.enable = true;
       powerManagement.enable = false;
