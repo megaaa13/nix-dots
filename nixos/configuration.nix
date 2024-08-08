@@ -7,16 +7,13 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
       ./start.nix
-      ./secureboot.nix
     ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "tower"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -52,11 +49,11 @@
 
   security.rtkit.enable = true;
   services.pipewire = {
-	enable = true;
-	alsa.enable = true;
-	alsa.support32Bit = true;
-	pulse.enable = true;
-	jack.enable = true;
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
   };
  
 
@@ -66,22 +63,23 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	neovim
-	libnotify
-	firefox
-	thunderbird
-	wget
-	vscode
-	zsh
-	home-manager
-	git
-	spotify
-	discord
-	pipewire
-	wireplumber
-	grim
-	slurp
-	sbctl
+    neovim
+    libnotify
+    firefox
+    thunderbird
+    wget
+    vscode
+    zsh
+    home-manager
+    git
+    spotify
+    discord
+    pipewire
+    wireplumber
+    grim
+    slurp
+    sbctl
+    killall
   ];
 
   fonts.packages = with pkgs; [
@@ -96,17 +94,12 @@
   # };
 
   # List services that you want to enable:
-
-  programs.hyprland = {
-	enable = true;
-	xwayland.enable = true;
-  };
   
   programs.zsh.enable = true;
 
   environment.sessionVariables = {
-	WLR_NO_HARDWARE_CURSOR = "1";
-	NIXOS_OZONE_WL = "1";
+    WLR_NO_HARDWARE_CURSOR = "1";
+    NIXOS_OZONE_WL = "1";
   };
 
   nix.settings.experimental-features = [
@@ -115,31 +108,11 @@
   ];
 
   security.pam.services.hyprlock = { };
-  
-  services.xserver.videoDrivers = ["nvidia"];
 
-  hardware = {
-    graphics.enable = true;
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      open = false;
-      nvidiaSettings = true;
-      # New nvidia driver, in order to FIX THE FCKING XWAYLAND ISSUE (and then the gaming on it !)
-      package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        version = "555.58";
-        sha256_64bit = "sha256-bXvcXkg2kQZuCNKRZM5QoTaTjF4l2TtrsKUvyicj5ew=";
-        sha256_aarch64 = lib.fakeSha256;
-        openSha256 = lib.fakeSha256;
-        settingsSha256 = "sha256-vWnrXlBCb3K5uVkDFmJDVq51wrCoqgPF03lSjZOuU8M=";
-        persistencedSha256 = lib.fakeSha256;
-      };
-    };
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

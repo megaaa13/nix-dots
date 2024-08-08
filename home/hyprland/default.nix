@@ -10,6 +10,10 @@
             terminal = "kitty";
             theme = "~/.config/rofi/themes/theme.rasi";
         };
+        hyprland = {
+            enable = true;
+            xwayland.enable = true;
+        };
     };
 
     home.file = {
