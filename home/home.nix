@@ -5,6 +5,10 @@
     ./apps
     ./hyprland
   ];
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+  
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "martin";
@@ -61,6 +65,9 @@
     obs-studio
     vlc
     signal-desktop
+    spotify
+    discord
+    udiskie
   ];
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -106,12 +113,19 @@
       size = 16;
     };
   };
+
   gtk = {
     enable = true;
     theme = {
       name = "Orchis-Dark";
       package = pkgs.orchis-theme;
     };
+  };
+
+  qt = {
+    enable = true;
+    qt.platformTheme.name = "gtk";
+    qt.style.name = "adwaita-dark";
   };
 
   xdg = {

@@ -1,12 +1,41 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 {
     imports = [
         ./hardware-configuration.nix
-        ./secureboot.nix
-        ../configuration.nix
+        ../../modules/secureboot.nix
+        ../../modules/start.nix
+        ../../configuration.nix # Dead brain time
     ];
 
+    # Define a user account. Don't forget to set a password with ‘passwd’.
+    users.users.martin = {
+        isNormalUser = true;
+        extraGroups = [ "networkmanager" "wheel" "input" ];
+    };
+
     networking.hostName = "tower";
+
+    security.rtkit.enable = true;
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        jack.enable = true;
+    };
+    services.udisks2.enable = true;
+
+    programs.hyprland = {
+        enable = true;
+        xwayland.enable = true;
+    };
+
+    security.pam.services.hyprlock = { };
+
+    xdg.portal = {
+        enable = true;
+        extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    };
 
     services.xserver.videoDrivers = ["nvidia"];
 
@@ -30,4 +59,5 @@
         };
     };
 
+    system.stateVersion = "23.11";
 }

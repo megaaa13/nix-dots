@@ -26,7 +26,7 @@
         tower = nixpkgs.lib.nixosSystem rec {
           specialArgs = { inherit inputs; };
           modules = [
-            ./nixos/tower
+            ./nixos/hosts/tower
             home-manager.nixosModules.default
             { home-manager.extraSpecialArgs = specialArgs; }
             inputs.lanzaboote.nixosModules.lanzaboote
