@@ -23,7 +23,7 @@ swww-daemon &
 swaync &
 
 # automatic mount storage-devices
-# udiskie &
+udiskie &
 
 # exec-once = ~/.config/hypr/scripts/sleep.sh
 # exec-once = ~/.local/scripts/theming.sh
@@ -31,14 +31,14 @@ swaync &
 waybar &
 
 # battery notification
-~/.config/hypr/scripts/batterynotify.sh &
+#~/.config/hypr/scripts/batterynotify.sh &
 
 # gBar bar 0 &
 # gBar bar 1 &
 
 #eww daemon
 
-blueman-applet &
+#blueman-applet &
 nm-applet --indicator &
 
 # cursor & touchpad gestures
