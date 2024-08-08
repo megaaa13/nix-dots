@@ -1,10 +1,6 @@
 { pkgs, lib, ... }:
-let
-    sources = import ./nix/sources.nix;
-    lanzaboote = import sources.lanzaboote;
-in
 {
-  imports = [ lanzaboote.nixosModules.lanzaboote ];
+  imports = [ ];
 
   environment.systemPackages = [
     # For debugging and troubleshooting Secure Boot.

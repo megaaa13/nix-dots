@@ -2,7 +2,7 @@
   description = "My NixOS Configuration flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -24,12 +24,14 @@
 
       nixosConfigurations = {
         tower = nixpkgs.lib.nixosSystem rec {
-	  specialArgs = { inherit inputs };
-	  modules = [
-	    
-	  ];
-	};
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./nixos/configuration.nix
+            home-manager.nixosModules.default
+            { home-manager.extraSpecialArgs = specialArgs; }
+            inputs.lanzaboote.nixosModules.lanzaboote
+          ];
+	      };
       };
-
     };
 }
