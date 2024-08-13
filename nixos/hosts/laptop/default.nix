@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
-{
+{ # ONLY FOR TEMPLATE USAGE NOW !!!
   imports = [
     ./hardware-configuration.nix
     ../global
@@ -7,7 +7,7 @@
     ../../modules/start.nix
   ];
 
-  networking.hostName = "tower";
+  networking.hostName = "laptop";
 
   # Should not be necessary anymore, because we use home manager
   users.users.martin = {
@@ -19,8 +19,8 @@
 
   # Default layer configuration
   services.xserver = {
-    xkb.layout = "fr";
-    xkb.variant = "azerty";
+    xkb.layout = "be";
+    xkb.variant = "";
   };
 
   # Hyprland things

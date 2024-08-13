@@ -10,6 +10,8 @@
     "flakes"
   ];
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   # boot.tmp.cleanOnBoot = lib.mkDefault true;
 
   time.timeZone = "Europe/Brussels";
@@ -50,6 +52,16 @@
   fonts.packages = with pkgs; [
     nerdfonts
   ];
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+  services.udisks2.enable = true;
 
   programs = {
     git.enable = true;
