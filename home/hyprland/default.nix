@@ -24,10 +24,6 @@
             source = ./scripts;
             recursive = true;
         };
-        "${config.xdg.configHome}/swaync" = {
-            source = ./swaync;
-            recursive = true;
-        };
         "${config.xdg.configHome}/rofi" = {
             source = ./rofi;
             recursive = true;

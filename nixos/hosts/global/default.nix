@@ -56,11 +56,11 @@
     zsh = {
       enable = true;
       shellAliases = {
-        nb = "echo \"sudo nixos-rebuild switch --flake /etc/nixos#$(hostname)\" && sudo nixos-rebuild switch --flake /etc/nixos#$(hostname)";
-        nbo = "echo \"Offline build\" && echo \"sudo nixos-rebuild switch --flake /etc/nixos#$(hostname)\" && sudo nixos-rebuild switch --flake /etc/nixos#$(hostname) --option substitute false";
+        nb = "echo \"sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname)\" && sudo nixos-rebuild switch --flake ~/dotfiles/nixos#$(hostname)";
+        nbo = "echo \"Offline build\" && echo \"sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname)\" && sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname) --option substitute false";
         ncc = "echo \"sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d && nix-collect-garbage -d\" && sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d && nix-collect-garbage -d";
-        ns = "SOPS_AGE_KEY_FILE=/etc/nixos/keys/$USER.txt sops";
-        nu = "nix flake update /etc/nixos";
+        #ns = "SOPS_AGE_KEY_FILE=~/dotfiles/nixos/keys/$USER.txt sops";
+        nu = "sudo nix flake update -I ~/dotfiles";
       };
     };
     dconf.enable = true;
