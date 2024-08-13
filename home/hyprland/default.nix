@@ -3,7 +3,6 @@
 {
     imports = [
         ./waybar
-        ./miujoeuieoiuuhoeij
     ];
     
     programs = {

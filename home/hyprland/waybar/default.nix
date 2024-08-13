@@ -6,7 +6,7 @@ let
     spacing = 0;
     reload_style_on_change = true;
     cpu = {
-      format = " {usage}%"
+      format = " {usage}%";
     };
     "custom/gpu" = {
       interval = 3;
@@ -20,7 +20,7 @@ let
     };
     temperature = {
       format = " {temperatureC}°C";
-      format-icons = ["", "", "", "", ""];
+      format-icons = ["" "" "" "" ""];
       tooltip = false;
     };
     disk = {
@@ -96,7 +96,7 @@ let
       format-alt = "{:%d-%m-%Y}";
       tooltip = false;
     };
-    "custom/notification" = {
+    "custom/notifications" = {
       "tooltip" = false;
       "format" = "{icon}";
       "format-icons" = {
@@ -116,16 +116,16 @@ let
       on-click-right = "swaync-client -d -sw";
       escape = true;
     };
-    "custom/chwp": {
+    "custom/chwp" = {
       format = "";
       tooltip-format = "Change wallpaper";
       on-click = "~/.config/hypr/scripts/change_wp.sh";
     };
-    "custom/spotify": {
+    "custom/spotify" = {
       format = "{}";
       escape = true;
-      return-type": "text";
-      max-length": 40;
+      return-type = "text";
+      max-length = 40;
       interval = 5;
       on-click = "playerctl -p spotify play-pause";
       on-click-right = "playerctl -p spotify play-pause";
@@ -136,14 +136,14 @@ let
       exec-if = "pgrep spotify";
       tooltip = false;
     };
-    "hyprland/workspace": {
+    "hyprland/workspaces" = {
       disable-scroll = true;
       format = "{name}";
       "format-icons" = {  #Could be good to develop that with hyprsome
         "urgent" = "󰗖";
         "active" = "󰝥";
         "default" = "󰝦";
-      },
+      };
       sort-by-number = true;
     };
     "hyprland/window" = {
@@ -177,7 +177,7 @@ in
           "disk"
           "network"
         ];
-        modules-center = [ "hyprland/workspace" "hyprland/window" ];
+        modules-center = [ "hyprland/workspaces" "hyprland/window" ];
         
         modules-right = if (osConfig.networking.hostName == "tower") then
           [
@@ -187,7 +187,7 @@ in
             "custom/chwp"
             "custom/notifications"
             "clock"
-          ];
+          ]
         else
           [
             "pulseaudio"
