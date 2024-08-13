@@ -1,8 +1,12 @@
 { pkgs, config, osConfig, ... }:
 
 {
+    imports = [
+        ./waybar
+        ./miujoeuieoiuuhoeij
+    ];
+    
     programs = {
-        waybar.enable = true;
         hyprlock.enable = true;
         rofi = {
             enable = true;
@@ -13,10 +17,6 @@
     };
 
     home.file = {
-        "${config.xdg.configHome}/waybar" = {
-            source = ./waybar;
-            recursive = true;
-        };
         "${config.xdg.configHome}/hypr/hyprlock.conf" = {
             source = ./hyprlock/hyprlock.conf;
         };
