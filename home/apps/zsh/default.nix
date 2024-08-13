@@ -24,8 +24,7 @@
       };
       shellAliases = {
         ll = "ls -l";
-        nu = "sudo nixos-rebuild switch -I nixos-config=$HOME/dotfiles/nixos/configuration.nix";
-	nhu = "home-manager -f ~/dotfiles/home/home.nix switch";
+	      nhu = "home-manager -f ~/dotfiles/home/home.nix switch";
         cat = "bat";
         ls = "lsd";
         logout = "hyprctl dispatch exit";

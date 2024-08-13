@@ -68,6 +68,9 @@
     spotify
     discord
     udiskie
+    firefox
+    thunderbird
+    vscode
   ];
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -124,8 +127,8 @@
 
   qt = {
     enable = true;
-    qt.platformTheme.name = "gtk";
-    qt.style.name = "adwaita-dark";
+    platformTheme.name = "gtk";
+    style.name = "adwaita-dark";
   };
 
   xdg = {
