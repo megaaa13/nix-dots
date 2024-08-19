@@ -62,8 +62,8 @@ let
         critical = 90;
       };
       on-click = "hyprshade toggle blue-light-filter";
-      on-scroll-down = "brightnessctl -q set 5%-";
-      on-scroll-up = "brightnessctl -q set 5%+";
+      on-scroll-down = "swayosd-client --brightness lower 5";
+      on-scroll-up = "swayosd-client --brightness raise 5";
       tooltip = false;
     };
     tray = {
