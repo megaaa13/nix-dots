@@ -4,7 +4,7 @@
 supported_formats=("jpeg" "png" "gif" "pnm" "tga" "tiff" "webp" "bmp" "farbfeld" "jpg")
 
 TMP="$(mktemp)"
-filename=$(ls -1 ~/Pictures/wallpapers | grep \\.jpg | while read A ; do  echo -en "$A\x00icon\x1f~/Pictures/wallpapers/$A\n"; done | rofi -dmenu -theme ~/dotfiles/home/hyprland/rofi/themes/wallpaper.rasi)
+filename=$(ls -1 ~/Pictures/wallpapers | grep \\.jpg | while read A ; do  echo -en "$A\x00icon\x1f~/Pictures/wallpapers/$A\n"; done | rofi -dmenu -theme ~/.config/rofi/themes/wallpaper.rasi)
 # ranger ~/Pictures/wallpapers --choosefile="$TMP"
 
 # filename="$(cat $TMP)"
