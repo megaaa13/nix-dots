@@ -45,6 +45,7 @@
     neofetch
     bat
     lsd
+    qview
     playerctl
     cliphist
     wl-clipboard
