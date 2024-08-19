@@ -32,6 +32,15 @@
             inputs.lanzaboote.nixosModules.lanzaboote
           ];
 	      };
+        laptop = nixpkgs.lib.nixosSystem rec {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./nixos/hosts/laptop
+            home-manager.nixosModules.default
+            { home-manager.extraSpecialArgs = specialArgs; }
+            inputs.lanzaboote.nixosModules.lanzaboote
+          ];
+	      };
       };
     };
 }
