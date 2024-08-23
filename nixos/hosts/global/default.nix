@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    ../../modules/python.nix
   ];
   
   nix.settings.experimental-features = [
@@ -13,7 +14,7 @@
   nix.optimise = {
     automatic = true;
     dates = [ "03:45" ];
-  }
+  };
 
   nix.gc = {
     automatic = true;
