@@ -57,14 +57,21 @@
     zip
     unzip
     wireplumber
-    grim
-    slurp
     sbctl
+    ncdu
     killall
   ];
 
   fonts.packages = with pkgs; [
-    nerdfonts
+    (nerdfonts.override {
+      fonts = [
+        "JetBrainsMono"
+        "Meslo"
+        "CascadiaCode"
+        "DroidSansMono"
+        "Hermit"
+      ];
+    })
   ];
 
   security.rtkit.enable = true;

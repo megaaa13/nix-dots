@@ -50,6 +50,8 @@
     cliphist
     wl-clipboard
     swayidle
+    grim
+    slurp
     swww
     swayosd
     wofi
