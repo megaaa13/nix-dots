@@ -68,7 +68,6 @@
     obs-studio
     vlc
     signal-desktop
-    spotify
     discord
     udiskie
     firefox

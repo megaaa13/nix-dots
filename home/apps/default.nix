@@ -4,5 +4,6 @@
     ./zsh
     ./kitty
     ./pywal
+    ./spicetify
   ];
 }
