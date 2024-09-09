@@ -99,6 +99,8 @@
     dconf.enable = true;
   };
 
+  # Spotify discovery
+  networking.firewall.allowedUDPPorts = [ 5353 ];
 
   networking.networkmanager.enable = true;
 }

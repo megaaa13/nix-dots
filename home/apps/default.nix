@@ -5,5 +5,6 @@
     ./kitty
     ./pywal
     ./spicetify
+    ./git
   ];
 }
