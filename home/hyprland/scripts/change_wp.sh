@@ -10,7 +10,7 @@ filename=$(ls -1 ~/Pictures/wallpapers | grep \\.jpg | while read A ; do  echo -
 # filename="$(cat $TMP)"
 
 if [[ -z "$filename" ]]; then
-  notify-send "Wallpaper" "Error: No file given"
+  # notify-send "Wallpaper" "Error: No file given"
   exit 1
 fi
 
