@@ -14,7 +14,7 @@ Feel free to tell me about any improvement that you could think of !
 - Bar: Waybar
 - Shell: zsh
 - Terminal: kitty
-- File manager: ranger
+- File manager: yazi
 - Lockscreen: Hyprlock
 - Launchers: Rofi (Wayland)
 - Wallpaper manager: swww

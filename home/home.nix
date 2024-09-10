@@ -57,7 +57,6 @@
     wofi
     hyprshot
     hyprpicker
-    ranger
     pavucontrol
     networkmanagerapplet
     swaynotificationcenter
@@ -137,14 +136,14 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "inode/directory" = "ranger-open.desktop";
+        "inode/directory" = "yazi-open.desktop";
         "application/pdf" = "firefox.desktop";
       };
     };
     desktopEntries = {
-      ranger-open = {
-        name = "Open with Ranger";
-        exec = "kitty ranger";
+      yazi-open = {
+        name = "Open with Yazi";
+        exec = "kitty yazi";
         terminal = false;
         mimeType = [ "inode/directory" ];
         noDisplay = true;

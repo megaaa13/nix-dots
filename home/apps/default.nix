@@ -6,5 +6,6 @@
     ./pywal
     ./spicetify
     ./git
+    ./yazi
   ];
 }
