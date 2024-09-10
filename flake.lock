@@ -258,7 +258,8 @@
         "lanzaboote": "lanzaboote",
         "nixpkgs": "nixpkgs",
         "sops-nix": "sops-nix",
-        "spicetify-nix": "spicetify-nix"
+        "spicetify-nix": "spicetify-nix",
+        "themecord": "themecord"
       }
     },
     "rust-overlay": {
@@ -338,6 +339,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "themecord": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1723741990,
+        "narHash": "sha256-miZF6mUk2C04L6NXv7pZBsNOcTpooBbZdmyTlQV00yE=",
+        "owner": "danihek",
+        "repo": "themecord",
+        "rev": "8d9791d6f97492ae88d248a29bff5c126016f2ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "danihek",
+        "repo": "themecord",
         "type": "github"
       }
     }

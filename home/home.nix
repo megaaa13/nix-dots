@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -67,7 +67,8 @@
     obs-studio
     vlc
     signal-desktop
-    discord
+    vesktop
+    inputs.themecord.packages.x86_64-linux.default
     udiskie
     firefox
     thunderbird
