@@ -22,6 +22,7 @@ file_extension=$(tr [:upper:] [:lower:] <<< "$file_extension")
 if [[ " ${supported_formats[@]} " =~ " $file_extension " ]]; then
   swww img ~/Pictures/wallpapers/$filename -o $currentoutput --transition-type fade --transition-fps 60 --transition-bezier 1,.08,.39,.79
   wal -nteq -i ~/Pictures/wallpapers/$filename
+  themecord
 else
   notify-send "Wallpaper" "$filename seems to not be a image file."
 fi
