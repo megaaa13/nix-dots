@@ -12,7 +12,7 @@
 --text-link: {color4} !important;
 --button-background: {color4} !important;
 --button-background-hover: {color0} !important;
---button-background-active: {color0} !important;
+--button-background-active: {color4} !important;
 --button-accent-hover: {color0} !important;
 --button-accent-active: {color5} !important;
 --button-destructive: {color5} !important;
