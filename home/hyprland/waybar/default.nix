@@ -17,6 +17,7 @@ let
     memory = {
       format = "󰾅 {used}/{total} GB";
       tooltip = false;
+      interval = 1;
     };
     temperature = {
       format = " {temperatureC}°C";
@@ -36,6 +37,7 @@ let
       format-wifi = "{essid} ({signalStrength}%) 󰖩";
       format-ethernet = "{ipaddr}/{cidr}  ";
       tooltip = false;
+      interval = 1;
     };
     battery = {
       states = {

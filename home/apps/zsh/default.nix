@@ -7,16 +7,21 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       plugins = [
-	{
+	      {
           name = "powerlevel10k";
           src = pkgs.zsh-powerlevel10k;
           file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
         }
-	{
+	      {
     	  name = "powerlevel10k-config";
-	  src = lib.cleanSource ./.;
+	      src = lib.cleanSource ./.;
     	  file = ".p10k.zsh";
-  	}
+  	    }
+        {
+          name = "zsh-nix-shell";
+          file = "share/zsh-nix-shell/nix-shell.plugin.zsh";
+          src = pkgs.zsh-nix-shell;
+        } 
       ];
       oh-my-zsh = {
         enable = true;
