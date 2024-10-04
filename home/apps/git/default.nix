@@ -10,6 +10,7 @@
       s = "status";
       d = "diff";
       c = "commit";
+      adog = "log --all --decorate --oneline --graph";
     };
     extraConfig = {
       push = {
