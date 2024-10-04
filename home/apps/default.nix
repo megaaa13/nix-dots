@@ -7,5 +7,10 @@
     ./spicetify
     ./git
     ./yazi
+    ./ssh
   ];
+
+  modules = {
+    ssh.enable = true;
+  };
 }
