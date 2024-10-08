@@ -8,6 +8,7 @@
         numpy
         pandas
         matplotlib
+        tkinter
         jupyter
         scapy
         virtualenv
