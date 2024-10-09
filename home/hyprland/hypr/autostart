@@ -36,7 +36,7 @@ waybar &
 
 #eww daemon
 
-#blueman-applet &
+blueman-applet &
 nm-applet --indicator &
 
 # cursor & touchpad gestures
