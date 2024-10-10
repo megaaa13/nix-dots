@@ -9,10 +9,10 @@
         pandas
         matplotlib
         tkinter
+	scipy
         jupyter
         scapy
         virtualenv
-        pygame
       ]
     ))
   ];
