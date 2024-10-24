@@ -140,11 +140,19 @@ let
     };
     "hyprland/workspaces" = {
       disable-scroll = true;
-      format = "{name}";
+      format = "{name} {icon} ";
       "format-icons" = {  #Could be good to develop that with hyprsome
+        "1" = "";
+        "2" = "";
+        "3" = "";
+        "4" = "";
+        "5" = "";
         "urgent" = "󰗖";
         "active" = "󰝥";
         "default" = "󰝦";
+      };
+      persistent-workspaces = {
+        "*" = 5;
       };
       sort-by-number = true;
     };

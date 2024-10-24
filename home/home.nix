@@ -62,7 +62,6 @@
     swaynotificationcenter
     prismlauncher
     ferdium
-    pywal
     cava
     obs-studio
     vlc

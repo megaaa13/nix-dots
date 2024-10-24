@@ -5,6 +5,7 @@
     ../global
     ../../modules/secureboot.nix
     ../../modules/start.nix
+    ../../modules/bluetooth.nix
   ];
 
   networking.hostName = "laptop";
@@ -22,9 +23,6 @@
     xkb.layout = "be";
     xkb.variant = "";
   };
-
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  services.blueman.enable = true;
 
   # Hyprland things
 

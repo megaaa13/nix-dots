@@ -1,20 +1,27 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, lib, inputs, config, ... }:
 let 
+  spicecfg = config.modules.spicetify;
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in
 {
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "spotify"
-  ];
+  options = {
+    modules.spicetify.enable = lib.mkEnableOption "Enable spicetify";
+  };
 
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
 
-  programs.spicetify = {
-    enable = true;
-    theme = spicePkgs.themes.comfy;
-    colorScheme = "nord";
+  config = lib.mkIf spicecfg.enable {
 
-    enabledExtensions = with spicePkgs.extensions; [
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "spotify"
+    ];
+
+
+    programs.spicetify = {
+      enable = true;
+      theme = spicePkgs.themes.comfy;
+      colorScheme = "nord";
+      enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
         bookmark
         keyboardShortcut
@@ -30,10 +37,9 @@ in
         volumePercentage
         # adblock # Can be useful
       ];
-
-    enabledCustomApps = with spicePkgs.apps; [
+      enabledCustomApps = with spicePkgs.apps; [
         newReleases
       ];
-
-  };
+    };
+  };  
 }

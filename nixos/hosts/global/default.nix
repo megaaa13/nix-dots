@@ -92,17 +92,7 @@
 
 
   programs = {
-    git.enable = true;
-    zsh = {
-      enable = true;
-      shellAliases = {
-        nb = "echo \"sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname)\" && sudo nixos-rebuild switch --flake ~/dotfiles/nixos#$(hostname)";
-        nbo = "echo \"Offline build\" && echo \"sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname)\" && sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname) --option substitute false";
-        ncc = "echo \"sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d && nix-collect-garbage -d\" && sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d && nix-collect-garbage -d";
-        #ns = "SOPS_AGE_KEY_FILE=~/dotfiles/nixos/keys/$USER.txt sops";
-        nu = "sudo nix flake update ~/dotfiles/";
-      };
-    };
+    zsh.enable = true;
     dconf.enable = true;
   };
 
