@@ -151,9 +151,9 @@ let
         "active" = "󰝥";
         "default" = "󰝦";
       };
-      persistent-workspaces = {
-        "*" = 5;
-      };
+      #persistent-workspaces = {
+      #  "*" = 5;
+      #};
       sort-by-number = true;
     };
     "hyprland/window" = {
