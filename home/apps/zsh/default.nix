@@ -47,6 +47,7 @@ in
           ncc = "echo \"sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d && nix-collect-garbage -d\" && sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d && nix-collect-garbage -d";
           #ns = "SOPS_AGE_KEY_FILE=~/dotfiles/nixos/keys/$USER.txt sops";
           nu = "sudo nix flake update --flake ~/dotfiles/";
+	  nsh = "FILENAME=$(ls -1 ~/dotfiles/nix-shells | rofi -dmenu) && nix-shell ~/dotfiles/nix-shells/$FILENAME";
         };
         history = {
         size = 10000;
