@@ -48,6 +48,7 @@ in
           #ns = "SOPS_AGE_KEY_FILE=~/dotfiles/nixos/keys/$USER.txt sops";
           nu = "sudo nix flake update --flake ~/dotfiles/";
 	  nsh = "FILENAME=$(ls -1 ~/dotfiles/nix-shells | rofi -dmenu) && nix-shell ~/dotfiles/nix-shells/$FILENAME";
+	  sr = "~/dotfiles/home/hyprland/scripts/remote_send.sh";
         };
         history = {
         size = 10000;
