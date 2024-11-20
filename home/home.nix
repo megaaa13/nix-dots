@@ -62,7 +62,7 @@
     swaynotificationcenter
     prismlauncher
     ferdium
-    cava
+    #cava
     obs-studio
     vlc
     signal-desktop
@@ -74,7 +74,7 @@
     vscode
     teams-for-linux
     md2pdf
-    #qgis
+    qgis
     zotero
     onedriver
   ];
