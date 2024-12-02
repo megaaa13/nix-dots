@@ -63,15 +63,11 @@
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-        "Meslo"
-        "CascadiaCode"
-        "DroidSansMono"
-        "Hermit"
-      ];
-    })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.meslo-lg
+    nerd-fonts.hurmit
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.droid-sans-mono
   ];
 
   security.rtkit.enable = true;
