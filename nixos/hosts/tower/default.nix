@@ -5,6 +5,7 @@
     ../global
     ../../modules/secureboot.nix
     ../../modules/start.nix
+    ../../modules/bluetooth.nix
   ];
 
   networking.hostName = "tower";
@@ -24,11 +25,6 @@
   };
 
   # Hyprland things
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
   security.pam.services.hyprlock = { };
 
@@ -59,7 +55,7 @@
       open = false;
       nvidiaSettings = true;
       # New nvidia driver, in order to FIX THE FCKING XWAYLAND ISSUE (and then the gaming on it !)
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
   };
 

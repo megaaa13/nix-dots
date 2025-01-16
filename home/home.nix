@@ -145,6 +145,10 @@
         "application/pdf" = "firefox.desktop";
       };
     };
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+    };
     desktopEntries = {
       yazi-open = {
         name = "Open with Yazi";
