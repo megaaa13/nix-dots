@@ -18,6 +18,7 @@ let
     freetype
     dbus
     stdenv.cc.cc
+    nlohmann_json
   ];
 in with pkgs; mkShell {
   packages = [
@@ -29,10 +30,22 @@ in with pkgs; mkShell {
     pythonPackages.matplotlib
     pythonPackages.pyqt5
     qt5.qtwayland
+    getopt
+    flex
+    bison
+    gcc
+    gnumake
+    bc
+    pkg-config
+    binutils
+    cmake
   ];
 
   buildInputs = [
-    
+    elfutils
+    ncurses
+    openssl
+    zlib
   ];
 
   shellHook = ''
