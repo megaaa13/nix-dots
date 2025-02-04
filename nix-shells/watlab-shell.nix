@@ -17,9 +17,12 @@ let
     zlib
     freetype
     dbus
-    stdenv.cc.cc
     nlohmann_json
+    binutils
+    glibc
+    libgcc
   ];
+
 in with pkgs; mkShell {
   packages = [
     pythonPackages.pip
@@ -33,35 +36,31 @@ in with pkgs; mkShell {
     getopt
     flex
     bison
-    gcc
     gnumake
+    gcc
     bc
     pkg-config
-    binutils
     cmake
+    stdenv.cc.cc
+    libgcc
   ];
 
   buildInputs = [
-    elfutils
-    ncurses
-    openssl
-    zlib
+    glibc.static
   ];
 
   shellHook = ''
     SOURCE_DATE_EPOCH=$(date +%s)
-    export "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${lib-path}"
-    VENV=.venv
+    export "LD_LIBRARY_PATH=${lib-path}:${glibc.out}/lib:${gcc.out}/lib:$LD_LIBRARY_PATH"
 
+    VENV=.venv
     if test ! -d $VENV; then
-      python3.12 -m venv $VENV
+      python -m venv $VENV
+      source ./$VENV/bin/activate
+      pip install watlab
     fi
+
     source ./$VENV/bin/activate
     export PYTHONPATH=`pwd`/$VENV/${python.sitePackages}/:$PYTHONPATH
-    pip install watlab
-  '';
-
-  postShellHook = ''
-    ln -sf ${python.sitePackages}/* ./.venv/lib/python3.12/site-packages
   '';
 }

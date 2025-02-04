@@ -1,7 +1,24 @@
 let
   pkgs = import <nixpkgs> {};
-  lib-path = pkgs.lib.makeLibraryPath [
-    pkgs.glibc
+  lib-path = with pkgs; lib.makeLibraryPath [
+    libGL
+    libGLU
+    xorg.libXrender
+    xorg.libXcursor
+    xorg.libXfixes
+    xorg.libXft
+    xorg.libXi
+    fontconfig
+    xorg.libXinerama
+    xorg.libxcb
+    xorg.libX11
+    glib
+    zlib
+    freetype
+    dbus
+    stdenv.cc.cc
+    nlohmann_json
+    glibc
   ];
 in with pkgs; mkShell {
     name = "C development";
@@ -21,6 +38,24 @@ in with pkgs; mkShell {
       ncurses
       openssl
       zlib
+      libGL
+      libGLU
+      xorg.libXrender
+      xorg.libXcursor
+      xorg.libXfixes
+      xorg.libXft
+      xorg.xinput
+      fontconfig
+      xorg.libXinerama
+      xorg.libxcb
+      xorg.libX11
+      xorg.libXi
+      glib
+      zlib
+      freetype
+      dbus
+      stdenv.cc.cc
+      xorg.libXrandr
     ];
     shellHook = ''
       export "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${lib-path}"

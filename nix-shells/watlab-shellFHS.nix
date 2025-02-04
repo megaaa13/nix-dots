@@ -1,5 +1,5 @@
 { pkgs ? import <nixpkgs> {} }:
-(pkgs.buildFHSUserEnv {
+(pkgs.buildFHSEnv {
   name = "Watlab";
   targetPkgs = pkgs: (with pkgs; [
     python3
@@ -15,10 +15,13 @@
     xorg.libXinerama
     xorg.libX11
     glib
+    glibc.static
     zlib
     freetype
     dbus
     expat
+    cmake
+    gcc
   ]);
   runScript = "zsh";
 }).env
