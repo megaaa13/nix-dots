@@ -19,6 +19,7 @@ let
     dbus
     nlohmann_json
     binutils
+    stdenv.cc.cc
     glibc
     libgcc
   ];

@@ -21,6 +21,22 @@ in
       };
       plugins = hyprlandcfg.plugins;
       settings = {
+        env = [
+          "XCURSOR_SIZE,16"
+          "QT_QPA_PLATFORM,wayland;xcb"
+          "QT_QPA_PLATFORMTHEME,qt5ct"
+          "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+          "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+          "MOZ_ENABLE_WAYLAND,1"
+          "NVD_BACKEND,direct"
+          "GBM_BACKEND,nvidia-drm"
+          "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+          "LIBVA_DRIVER_NAME,nvidia"
+          "__GL_GSYNC_ALLOWED,1"
+          "SDL_VIDEODRIVER,wayland"
+          "CLUTTER_BACKEND,wayland"
+          "XDG_SESSION_DESKTOP,Hyprland"
+        ];
         exec-once = [
           "${pkgs.hyprlock}/bin/hyprlock --immediate" # Can be move to a nix module
           "${pkgs.swayosd}/bin/swayosd-server" # Could be started by nix
@@ -170,6 +186,11 @@ in
 
           # Lock the screen
           "$mainMod, L, exec, hyprlock"
+
+	  # Specials workspaces
+	  "ALT, S, togglespecialworkspace, scratch"
+	  "ALT SHIFT, S, movetoworkspace, special:scratch"
+          "ALT CTRL, S, movetoworkspacesilent, special:scratch"
         ];
 
         bindl = [
@@ -273,7 +294,7 @@ in
           "maximize,class:(wm-maximized)"
           "float,class:(python3)"
           "float, class:(firefox), title:(Picture-in-Picture)"
-          "pin, class:(firefox), title:(Picture-in-Picture)"
+	  "pin, title:(Picture-in-picture)"
         ];
         device = [
           {
@@ -301,3 +322,4 @@ in
     };
   };
 }
+
