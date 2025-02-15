@@ -67,6 +67,7 @@ in
           "$mainMod, F, exec, firefox"
           "$mainMod, D, exec, vesktop $waylandtags"
           "$mainMod, C, killactive,"
+          "$mainMod, W, exec, bash ~/.config/waybar/scripts/hide_waybar.sh"
           # "$mainMod, M, exec, sh ~/.config/rofi/bin/powermenu"
           "$mainMod, E, exec, kitty --single-instance --detach zsh -i -c 'yazi'"
           "$mainMod SHIFT, R, exec, hyprctl reload"
