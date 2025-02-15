@@ -9,7 +9,8 @@
 	modules = {
 		hyprland.enable = true;
 		hyprland.plugins = [
-			# inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
+			# inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+			# inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
 		];
 	};
 

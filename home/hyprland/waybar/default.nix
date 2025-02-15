@@ -3,10 +3,12 @@ let
   defaultBar = {
     layer = "top";
     position = "top";
+    height = 30;
     spacing = 0;
     reload_style_on_change = true;
     cpu = {
       format = " {usage}%";
+      interval = 3;
     };
     "custom/gpu" = {
       interval = 3;
@@ -15,9 +17,10 @@ let
       tooltip = false;
     };
     memory = {
-      format = "󰾅 {used}/{total} GB";
+      format = "󰾅 {used:0.1f} GB";
+      format-alt = "󰾅 {used:0.1f}/{total:0.1f} GB";
       tooltip = false;
-      interval = 1;
+      interval = 3;
     };
     temperature = {
       format = " {temperatureC}°C";
@@ -25,9 +28,11 @@ let
       tooltip = false;
     };
     disk = {
-      format = " {used}/{total}";
-      format-alt = " {percentage_used}% ({used})";
+      format = " {specific_used:0.2f}/{specific_total:0.2f}GB";
+      format-alt = " {percentage_used}% ({specific_used:0.2f})";
       tooltip = false;
+      unit = "GB";
+      interval = 30;
     };
     network = {
       format = "󰹹 {bandwidthTotalBytes}";
@@ -179,15 +184,26 @@ in
     style = ./style.css;
     settings = {
       uniqueBar = defaultBar // {
-        modules-left = [
+        modules-left = if (osConfig.networking.hostName == "tower") then
+          [
+            "hyprland/workspaces"
+            "cpu"
+            "custom/gpu"
+            "memory"
+            "disk"
+            # "network"
+          ]
+        else
+        [
+          "hyprland/workspaces"
           "cpu"
           "custom/gpu"
           "memory"
           "temperature"
           "disk"
-          "network"
+          # "network"
         ];
-        modules-center = [ "hyprland/workspaces" "hyprland/window" ];
+        modules-center = [ "hyprland/window" ];
         
         modules-right = if (osConfig.networking.hostName == "tower") then
           [

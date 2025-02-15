@@ -28,10 +28,6 @@
 
   security.pam.services.hyprlock = { };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-  };
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSOR = "1";

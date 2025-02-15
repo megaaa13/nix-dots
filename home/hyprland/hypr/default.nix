@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 let 
   hyprlandcfg = config.modules.hyprland;
 in
@@ -15,6 +15,8 @@ in
   config = lib.mkIf hyprlandcfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       systemd = {
         enable = true;
         enableXdgAutostart = true;
