@@ -56,7 +56,7 @@
     nvidia = {
       prime = {
         intelBusId = "PCI:0:2:0";
-	      nvidiaBusId = "PCI:1:0:0";
+        nvidiaBusId = "PCI:1:0:0";
       };
       modesetting.enable = true;
       powerManagement.enable = false;
@@ -64,7 +64,7 @@
       open = false;
       nvidiaSettings = true;
       # New nvidia driver, in order to FIX THE FCKING XWAYLAND ISSUE (and then the gaming on it !)
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
   };
 
