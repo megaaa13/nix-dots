@@ -143,6 +143,7 @@
       defaultApplications = {
         "inode/directory" = "yazi-open.desktop";
         "application/pdf" = "firefox.desktop";
+	"text/plain" = "code.desktop";
       };
     };
     portal = {

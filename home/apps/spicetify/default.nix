@@ -35,7 +35,7 @@ in
         autoSkip
         playNext
         volumePercentage
-	queueTime
+	      queueTime
         # adblock # Can be useful
       ];
       enabledCustomApps = with spicePkgs.apps; [

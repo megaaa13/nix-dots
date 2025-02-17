@@ -6,6 +6,7 @@
     ../../modules/secureboot.nix
     ../../modules/start.nix
     ../../modules/bluetooth.nix
+    ../../modules/steam.nix
   ];
 
   networking.hostName = "tower";
@@ -13,6 +14,7 @@
   # Should not be necessary anymore, because we use home manager
   users.users.martin = {
     isNormalUser = true;
+    description = "Martin";
     extraGroups = [ "networkmanager" "wheel" "input" ];
   };
 
@@ -37,13 +39,21 @@
   # Relative to GPU configuration
   services.xserver.videoDrivers = ["nvidia"];
 
+  # Steam configuration
+  programs.gamemode.enable = true;
+
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "nvidia-x11"
     "nvidia-settings"
+    "steam"
+    "steam-original"
+    "steam-unwrapped"
+    "steam-run"
   ];
 
   hardware = {
     graphics.enable = true;
+    graphics.enable32Bit = true;
     nvidia = {
       modesetting.enable = true;
       powerManagement.enable = true;

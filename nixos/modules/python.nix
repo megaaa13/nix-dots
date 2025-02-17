@@ -9,7 +9,7 @@
         pandas
         matplotlib
         tkinter
-	scipy
+	      scipy
         jupyter
         scapy
         virtualenv

@@ -13,6 +13,7 @@
   # Should not be necessary anymore, because we use home manager
   users.users.martin = {
     isNormalUser = true;
+    description = "Martin";
     extraGroups = [ "networkmanager" "wheel" "input" ];
   };
 

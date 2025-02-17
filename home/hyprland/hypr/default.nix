@@ -97,7 +97,7 @@ in
           "$mainMod, Space, fullscreen, 1"
           "$mainMod + CTRL, Space, fullscreen"
           "$mainMod, Tab, togglefloating"
-          "ALT, Tab, cyclenext"
+          "CTRL, Tab, cyclenext"
           "$mainMod + CTRL, P, pseudo, "
           "$mainMod + CTRL, S, togglesplit,"
           "$mainMod + CTRL, G, togglegroup,"
@@ -190,10 +190,12 @@ in
           # Lock the screen
           "$mainMod, L, exec, hyprlock"
 
-	  # Specials workspaces
-	  "ALT, S, togglespecialworkspace, scratch"
-	  "ALT SHIFT, S, movetoworkspace, special:scratch"
+	        # Specials workspaces
+          "ALT, S, togglespecialworkspace, scratch"
+          "ALT SHIFT, S, movetoworkspace, special:scratch"
           "ALT CTRL, S, movetoworkspacesilent, special:scratch"
+
+          "ALT, Tab, overview:toggle"
         ];
 
         bindl = [
@@ -296,8 +298,8 @@ in
           "float,class:(wm-floating)"
           "maximize,class:(wm-maximized)"
           "float,class:(python3)"
-          "float, class:(firefox), title:(Picture-in-Picture)"
-	  "pin, title:(Picture-in-picture)"
+          "float, class:(firefox), title:(Incrustation vidéo)"
+	  "pin, title:(Incrustation vidéo)"
         ];
         device = [
           {
