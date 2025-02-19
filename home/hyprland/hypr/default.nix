@@ -97,7 +97,7 @@ in
           "$mainMod, Space, fullscreen, 1"
           "$mainMod + CTRL, Space, fullscreen"
           "$mainMod, Tab, togglefloating"
-          "CTRL, Tab, cyclenext"
+          "ALT, Tab, cyclenext"
           "$mainMod + CTRL, P, pseudo, "
           "$mainMod + CTRL, S, togglesplit,"
           "$mainMod + CTRL, G, togglegroup,"
@@ -194,8 +194,9 @@ in
           "ALT, S, togglespecialworkspace, scratch"
           "ALT SHIFT, S, movetoworkspace, special:scratch"
           "ALT CTRL, S, movetoworkspacesilent, special:scratch"
+          "ALT, M, togglespecialworkspace, spotify"
 
-          "ALT, Tab, overview:toggle"
+          "ALT, O, overview:toggle"
         ];
 
         bindl = [
@@ -299,7 +300,8 @@ in
           "maximize,class:(wm-maximized)"
           "float,class:(python3)"
           "float, class:(firefox), title:(Incrustation vidéo)"
-	  "pin, title:(Incrustation vidéo)"
+	        "pin, title:(Incrustation vidéo)"
+          "workspace special:spotify, class:^(spotify)$"
         ];
         device = [
           {

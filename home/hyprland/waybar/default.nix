@@ -147,11 +147,11 @@ let
       disable-scroll = true;
       format = "{name} {icon} ";
       "format-icons" = {  #Could be good to develop that with hyprsome
-        "1" = "";
-        "2" = "";
-        "3" = "";
-        "4" = "";
-        "5" = "";
+        # "1" = "";
+        # "2" = "";
+        # "3" = "";
+        # "4" = "";
+        # "5" = "";
         "urgent" = "󰗖";
         "active" = "󰝥";
         "default" = "󰝦";
