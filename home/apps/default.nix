@@ -8,6 +8,7 @@
     ./git
     ./yazi
     ./ssh
+    ./vscode
   ];
 
   modules = {
@@ -18,5 +19,6 @@
     git.enable = true;
     yazi.enable = true;
     ssh.enable = true;
+    vscode.enable = true;
   };
 }
