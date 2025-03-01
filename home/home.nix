@@ -49,7 +49,6 @@
     playerctl
     cliphist
     wl-clipboard
-    swayidle
     grim
     slurp
     swww

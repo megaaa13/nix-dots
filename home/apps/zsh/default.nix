@@ -1,7 +1,12 @@
-{ pkgs, config, lib, ...}:
-let 
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+let
   zshcfg = config.modules.zsh;
-in 
+in
 {
   options = {
     modules.zsh.enable = lib.mkEnableOption "Enable zsh";
@@ -20,19 +25,22 @@ in
             file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
           }
           {
-          name = "powerlevel10k-config";
-          src = lib.cleanSource ./.;
-          file = ".p10k.zsh";
+            name = "powerlevel10k-config";
+            src = lib.cleanSource ./.;
+            file = ".p10k.zsh";
           }
           {
             name = "zsh-nix-shell";
             file = "share/zsh-nix-shell/nix-shell.plugin.zsh";
             src = pkgs.zsh-nix-shell;
-          } 
+          }
         ];
         oh-my-zsh = {
           enable = true;
-          plugins = [ "git" "sudo"]; 
+          plugins = [
+            "git"
+            "sudo"
+          ];
         };
         shellAliases = {
           ll = "ls -l";
@@ -47,12 +55,12 @@ in
           ncc = "echo \"sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d && nix-collect-garbage -d\" && sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d && nix-collect-garbage -d";
           #ns = "SOPS_AGE_KEY_FILE=~/dotfiles/nixos/keys/$USER.txt sops";
           nu = "sudo nix flake update --flake ~/dotfiles/";
-	  nsh = "FILENAME=$(ls -1 ~/dotfiles/nix-shells | rofi -dmenu) && nix-shell ~/dotfiles/nix-shells/$FILENAME";
-	  sr = "~/dotfiles/home/hyprland/scripts/remote_send.sh";
+          nsh = "FILENAME=$(ls -1 ~/dotfiles/nix-shells | rofi -dmenu) && nix-shell ~/dotfiles/nix-shells/$FILENAME";
+          sr = "~/.config/hypr/scripts/remote_send.sh";
         };
         history = {
-        size = 10000;
-        path = "${config.xdg.dataHome}/zsh/history";
+          size = 10000;
+          path = "${config.xdg.dataHome}/zsh/history";
         };
       };
     };

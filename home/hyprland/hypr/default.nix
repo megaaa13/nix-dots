@@ -46,8 +46,6 @@ in
           "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator"
           "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
           "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
-          "${pkgs.swayidle}/bin/swayidle -w timeout 600 'pidof hyprlock || hyprlock' before-sleep 'pidof hyprlock || hyprlock'" # Hypridle, one day
-          "${pkgs.swayidle}/bin/swayidle -w timeout 1200 'systemctl suspend'" # Hypridle, one day
         ];
         monitor = [
           "eDP-1,1920x1080@144,0x0,1"
@@ -66,7 +64,7 @@ in
           "$mainMod, D, exec, vesktop $waylandtags"
           "$mainMod, C, killactive,"
           "$mainMod, W, exec, bash ~/.config/waybar/scripts/hide_waybar.sh"
-          # "$mainMod, M, exec, sh ~/.config/rofi/bin/powermenu"
+          "$mainMod, P, exec, sh ~/.config/hypr/scripts/powermenu.sh"
           "$mainMod, E, exec, kitty --single-instance --detach zsh -i -c 'yazi'"
           "$mainMod SHIFT, R, exec, hyprctl reload"
           "$mainMod ALT, V, exec, code $waylandtags"

@@ -4,6 +4,7 @@
 	imports = [
 			./waybar
 			./hypr
+			./hypridle
 	];
 
 	modules = {
