@@ -70,8 +70,9 @@ in
           "$mainMod ALT, V, exec, code $waylandtags"
           "$mainMod, S, exec, spotify $waylandtags"
           "ALT, Space, exec, $menu"
-          "$mainMod, R, exec, wofi --show drun"
           "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+          "$mainMod, X, exec, hyprpicker | wl-copy"
+          "$mainMod, A, exec, killall activate-linux 2>/dev/null || activate-linux -t 'Activate NixOS' -m 'Good luck finding settings' -x 300 -y 100 -f 'JetBrains Mono Nerd Font'"
 
           # Screenshots
           # Screenshot a monitor
