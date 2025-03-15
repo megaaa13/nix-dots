@@ -48,6 +48,7 @@
     nixfmt-rfc-style
     direnv
     clang-tools
+    tmux
   ];
 
   # Home Manager can also manage your environment variables through
