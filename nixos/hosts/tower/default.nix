@@ -18,7 +18,7 @@
     extraGroups = [ "networkmanager" "wheel" "input" ];
   };
 
-  home-manager.users.martin.imports = [ ../../../home/home.nix ];
+  home-manager.users.martin.imports = [ ../../../home/martin.nix ];
 
   # Default layer configuration
   services.xserver = {

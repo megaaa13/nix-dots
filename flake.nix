@@ -58,6 +58,14 @@
             inputs.lanzaboote.nixosModules.lanzaboote
           ];
 	      };
+        homelab = nixpkgs.lib.nixosSystem rec {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./nixos/hosts/homelab
+            home-manager.nixosModules.default
+            { home-manager.extraSpecialArgs = specialArgs; }
+          ];
+        };
       };
     };
 }
