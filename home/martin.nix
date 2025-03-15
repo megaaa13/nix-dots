@@ -82,6 +82,7 @@
     direnv
     clang-tools
     activate-linux
+    wakeonlan
   ];
 
   # Home Manager can also manage your environment variables through
