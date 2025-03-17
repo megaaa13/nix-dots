@@ -20,6 +20,7 @@ in
           user = "homelab";
           hostname = "192.168.1.4";
           identitiesOnly = true;
+        };
       };
     };
   };
