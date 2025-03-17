@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  osConfig,
+  ...
+}:
 
 {
   imports = [
@@ -19,7 +25,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   home.username = "martin";
   home.homeDirectory = "/home/martin";
 
@@ -32,58 +38,63 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  home.packages = with pkgs; [
+  home.packages =
+    with pkgs;
+    [
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      # # It is sometimes useful to fine-tune packages, for example, by applying
+      # # overrides. You can do that directly here, just don't forget the
+      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+      # # fonts?
+      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-    neofetch
-    bat
-    lsd
-    qview
-    playerctl
-    cliphist
-    wl-clipboard
-    grim
-    slurp
-    swww
-    swayosd
-    wofi
-    hyprshot
-    hyprpicker
-    pavucontrol
-    networkmanagerapplet
-    swaynotificationcenter
-    prismlauncher
-    #cava
-    obs-studio
-    vlc
-    signal-desktop
-    vesktop
-    inputs.themecord.packages.x86_64-linux.default
-    udiskie
-    firefox
-    thunderbird
-    teams-for-linux
-    md2pdf
-    qgis
-    zotero
-    onedriver
-    nixfmt-rfc-style
-    direnv
-    clang-tools
-    activate-linux
-    wakeonlan
-  ];
+      # # You can also create simple shell scripts directly inside your
+      # # configuration. For example, this adds a command 'my-hello' to your
+      # # environment:
+      # (pkgs.writeShellScriptBin "my-hello" ''
+      #   echo "Hello, ${config.home.username}!"
+      # '')
+      neofetch
+      bat
+      lsd
+      qview
+      playerctl
+      cliphist
+      wl-clipboard
+      grim
+      slurp
+      swww
+      swayosd
+      wofi
+      hyprshot
+      hyprpicker
+      pavucontrol
+      networkmanagerapplet
+      swaynotificationcenter
+      prismlauncher
+      #cava
+      obs-studio
+      vlc
+      signal-desktop
+      vesktop
+      inputs.themecord.packages.x86_64-linux.default
+      udiskie
+      firefox
+      thunderbird
+      teams-for-linux
+      md2pdf
+      qgis
+      zotero
+      onedriver
+      nixfmt-rfc-style
+      direnv
+      clang-tools
+      activate-linux
+      wakeonlan
+    ]
+    ++ lib.optionals (osConfig.networking.hostName == "tower") [
+      # ckb-next
+    ];
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -135,7 +146,7 @@
       defaultApplications = {
         "inode/directory" = "yazi-open.desktop";
         "application/pdf" = "firefox.desktop";
-	"text/plain" = "code.desktop";
+        "text/plain" = "code.desktop";
       };
     };
     portal = {
@@ -148,7 +159,7 @@
         terminal = false;
         mimeType = [ "inode/directory" ];
         noDisplay = true;
-	    };
+      };
     };
   };
   # Let Home Manager install and manage itself.

@@ -98,6 +98,7 @@
   ];
 
   programs = {
+    nix-ld.enable = true; # VSCode server
     zsh.enable = true;
   };
 

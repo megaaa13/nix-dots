@@ -314,6 +314,10 @@ in
             kb_layout = "fr";
           }
           {
+            name = "ckb1:-corsair-k70-rgb-mk.2-mechanical-gaming-keyboard-vkb";
+            kb_layout = "fr";
+          }
+          {
             name = "steelseries-steelseries-apex-3-tkl";
             kb_layout = "fr";
           }

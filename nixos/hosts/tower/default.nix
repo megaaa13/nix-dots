@@ -39,9 +39,6 @@
   # Relative to GPU configuration
   services.xserver.videoDrivers = ["nvidia"];
 
-  # Steam configuration
-  programs.gamemode.enable = true;
-
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "nvidia-x11"
     "nvidia-settings"
@@ -63,7 +60,12 @@
       # New nvidia driver, in order to FIX THE FCKING XWAYLAND ISSUE (and then the gaming on it !)
       package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
+    ckb-next.enable = true;
   };
+
+  # RGB
+  services.hardware.openrgb.enable = true;
+  environment.systemPackages = with pkgs; [ openrgb-with-all-plugins ];
 
   system.stateVersion = "23.11";
 }
