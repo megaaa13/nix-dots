@@ -193,7 +193,7 @@ in
           "ALT CTRL, S, movetoworkspacesilent, special:scratch"
           "ALT, M, togglespecialworkspace, spotify"
 
-          "ALT, O, overview:toggle"
+          # "ALT, O, overview:toggle"
         ];
 
         bindl = [

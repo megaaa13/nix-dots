@@ -3,6 +3,7 @@
   imports = [
     ./zsh
     ./kitty
+    ./latex
     ./pywal
     ./spicetify
     ./git

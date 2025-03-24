@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       general = {
-        lock_cmd = "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
+        lock_cmd = "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock --immediate";
         before_sleep_cmd = "loginctl lock-session";
         after_sleep_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
         inhibit_sleep = 3;

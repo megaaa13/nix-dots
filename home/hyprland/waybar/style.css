@@ -85,7 +85,7 @@ window#waybar.hidden {
 #custom-chwp,
 /* #custom-hyprshade, */
 #custom-weather {
-  background-color: #383c4a;
+  background-color: @background;
   color: @yellow;
   border-radius: 16px;
   padding: 0.5rem 1rem;
@@ -112,7 +112,7 @@ window#waybar.hidden {
   margin-left: 10px;
   border-radius: 10px;
   transition: none;
-  background: #383c4a;
+  background: @background;
 }
 
 #workspaces button {
@@ -142,7 +142,7 @@ window#waybar.hidden {
   box-shadow: inherit;
   text-shadow: inherit;
   border-radius: inherit;
-  color: #383c4a;
+  color: @background;
   background: #7c818c;
 }
 

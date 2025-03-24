@@ -12,7 +12,7 @@
 		hyprland.plugins = [
 			# inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
 			# inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-			inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+			# inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
 		];
 	};
 

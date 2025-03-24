@@ -1,5 +1,10 @@
-{ config, lib, pkgs, ... }:
-let 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
   pywalcfg = config.modules.pywal;
 in
 {
@@ -11,7 +16,7 @@ in
     home.packages = with pkgs; [
       pywal
     ];
-    
+
     home.file = {
       "${config.xdg.configHome}/wal/templates" = {
         source = ./templates;

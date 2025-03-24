@@ -25,6 +25,7 @@ in
           ms-python.vscode-pylance
           ms-python.python
           tomoki1207.pdf
+          james-yu.latex-workshop
         ];
       };
       direnv = {

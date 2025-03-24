@@ -21,6 +21,7 @@
     yazi.enable = true;
     ssh.enable = true;
     vscode.enable = true;
+    latex.enable = true;
   };
 
   # Allow unfree packages
