@@ -92,6 +92,7 @@
       clang-tools
       activate-linux
       wakeonlan
+      love
     ]
     ++ lib.optionals (osConfig.networking.hostName == "tower") [
       # ckb-next
