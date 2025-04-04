@@ -97,6 +97,12 @@
     zsh
   ];
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   programs = {
     nix-ld.enable = true; # VSCode server
     zsh.enable = true;

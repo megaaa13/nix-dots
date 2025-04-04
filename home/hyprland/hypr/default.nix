@@ -280,24 +280,22 @@ in
           workspace_swipe = false;
         };
         windowrule = [
-          "float, confirm"
-          "float, dialog"
-          "float, download"
-          "float, notification"
-          "float, error"
-          "float, splash"
-          "float, confirmreset"
+          "float, class:confirm"
+          "float, class:dialog"
+          "float, class:download"
+          "float, class:notification"
+          "float, class:error"
+          "float, class:splash"
+          "float, class:confirmreset"
           "float, title:Open File"
           "float, title:branchdialog"
-          "float, pavucontrol"
-        ];
-        windowrulev2 = [
+          "float, class:pavucontrol"
           "idleinhibit fullscreen, fullscreen:1"
           "float,class:(wm-floating)"
           "maximize,class:(wm-maximized)"
           "float,class:(python3)"
           "float, class:(firefox), title:(Incrustation vidéo)"
-	        "pin, title:(Incrustation vidéo)"
+	  "pin, title:(Incrustation vidéo)"
           "workspace special:spotify, class:^(spotify)$"
         ];
         device = [
