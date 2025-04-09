@@ -18,7 +18,7 @@ in
         };
         "homelab" = {
           user = "homelab";
-          hostname = "192.168.1.4";
+          hostname = "homelab.lan";
           identitiesOnly = true;
         };
       };
