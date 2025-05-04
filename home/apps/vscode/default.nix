@@ -24,7 +24,7 @@ in
           github.copilot-chat
           ms-python.vscode-pylance
           ms-python.python
-          tomoki1207.pdf
+          valentjn.vscode-ltex
           james-yu.latex-workshop
         ];
       };

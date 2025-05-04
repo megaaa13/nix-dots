@@ -42,7 +42,7 @@ in
           "${pkgs.swayosd}/bin/swayosd-server" # Could be started by nix
           "${pkgs.swww}/bin/swww-daemon"
           "${pkgs.swaynotificationcenter}/bin/swaync" # Can be move to a nix module
-          "${pkgs.udiskie}/bin/udiskie" # Can be move to a nix module
+          "${pkgs.udiskie}/bin/udiskie -s" # Can be move to a nix module
           "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator"
           "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
           "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
@@ -298,6 +298,10 @@ in
 	  "pin, title:(Incrustation vidéo)"
           "workspace special:spotify, class:^(spotify)$"
         ];
+	layerrule = [
+	  "noanim, hyprpicker"
+	  "noanim, selection"
+	];
         device = [
           {
             name = "sino-wealth-usb-keyboard";

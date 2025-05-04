@@ -19,8 +19,8 @@ in
 
     programs.spicetify = {
       enable = true;
-      theme = spicePkgs.themes.comfy;
-      colorScheme = "nord";
+      theme = spicePkgs.themes.catppuccin;
+      colorScheme = "macchiato";
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
         bookmark
@@ -28,7 +28,7 @@ in
         shuffle
         powerBar
         fullAlbumDate
-        phraseToPlaylist
+        #phraseToPlaylist
         songStats
         copyToClipboard
         hidePodcasts
