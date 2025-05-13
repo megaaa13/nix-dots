@@ -19,8 +19,8 @@ in
 
     programs.spicetify = {
       enable = true;
-      theme = spicePkgs.themes.catppuccin;
-      colorScheme = "macchiato";
+      theme = spicePkgs.themes.default;
+      colorScheme = "Ocean";
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
         bookmark
@@ -30,7 +30,7 @@ in
         fullAlbumDate
         #phraseToPlaylist
         songStats
-        copyToClipboard
+        # copyToClipboard
         hidePodcasts
         autoSkip
         playNext

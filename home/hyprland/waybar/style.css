@@ -205,7 +205,8 @@ window#waybar.hidden {
 /* Clock Module */
 #clock {
   color: @color3;
-  margin-right: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 /* =============================== */
@@ -325,6 +326,13 @@ window#waybar.hidden {
   padding-left: 5px;
   padding-right: 1.25rem;
   margin-right: 10px;
+}
+
+#custom-weather {
+  color: @color3;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 0px;
 }
 
 /* =============================== */

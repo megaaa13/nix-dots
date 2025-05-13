@@ -100,7 +100,7 @@ let
     };
     clock = {
       format = "{:%H:%M 󰃭 %d %b %Y}";
-      format-alt = "{:%d-%m-%Y}";
+      # format-alt = "{:%d-%m-%Y}";
       tooltip = false;
     };
     "custom/notifications" = {
@@ -142,6 +142,13 @@ let
       exec = "~/.config/waybar/scripts/spotify.sh";
       exec-if = "pgrep spotify";
       tooltip = false;
+    };
+    "custom/weather" = {
+      format = "{}";
+      tooltip = true;
+      interval = 600;
+      exec = "python ~/.config/waybar/scripts/weather.py";
+      return-type = "json";
     };
     "hyprland/workspaces" = {
       disable-scroll = true;
@@ -212,6 +219,7 @@ in
             "custom/spotify"
             "custom/chwp"
             "custom/notifications"
+            "custom/weather"
             "clock"
           ]
         else
@@ -223,6 +231,7 @@ in
             "custom/spotify"
             "custom/chwp"
             "custom/notifications"
+            "custom/weather"
             "clock"
           ];
       };
