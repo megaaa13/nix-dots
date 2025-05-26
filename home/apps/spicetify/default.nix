@@ -19,18 +19,17 @@ in
 
     programs.spicetify = {
       enable = true;
-      theme = spicePkgs.themes.default;
-      colorScheme = "Ocean";
+      theme = spicePkgs.themes.fluent;
+      colorScheme = "comfy";
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
         bookmark
         keyboardShortcut
         shuffle
+        skipStats 
         powerBar
         fullAlbumDate
-        #phraseToPlaylist
         songStats
-        # copyToClipboard
         hidePodcasts
         autoSkip
         playNext
@@ -39,7 +38,8 @@ in
         # adblock # Can be useful
       ];
       enabledCustomApps = with spicePkgs.apps; [
-        newReleases
+        # newReleases
+        # historyInSidebar
       ];
     };
   };  

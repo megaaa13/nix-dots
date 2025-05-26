@@ -93,6 +93,7 @@
       activate-linux
       wakeonlan
       love
+      btop
     ]
     ++ lib.optionals (osConfig.networking.hostName == "tower") [
       # ckb-next

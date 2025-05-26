@@ -49,6 +49,7 @@
     direnv
     clang-tools
     tmux
+    btop
   ];
 
   programs.direnv = {
