@@ -19,14 +19,14 @@ in
 
     programs.spicetify = {
       enable = true;
-      theme = spicePkgs.themes.fluent;
-      colorScheme = "comfy";
+      theme = spicePkgs.themes.comfy;
+      colorScheme = "Comfy";
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
         bookmark
         keyboardShortcut
         shuffle
-        skipStats 
+        # skipStats 
         powerBar
         fullAlbumDate
         songStats
@@ -39,7 +39,7 @@ in
       ];
       enabledCustomApps = with spicePkgs.apps; [
         # newReleases
-        # historyInSidebar
+        historyInSidebar
       ];
     };
   };  
