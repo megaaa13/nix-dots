@@ -1,5 +1,11 @@
-{ lib, config, pkgs, inputs, ... }:
-let 
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+let
   hyprlandcfg = config.modules.hyprland;
 in
 {
@@ -7,7 +13,7 @@ in
     modules.hyprland = {
       enable = lib.mkEnableOption "Enable hyprland";
       plugins = lib.mkOption {
-        default = [];
+        default = [ ];
         description = "List of plugins to enable";
       };
     };
@@ -187,7 +193,7 @@ in
           # Lock the screen
           "$mainMod, L, exec, hyprlock"
 
-	        # Specials workspaces
+          # Specials workspaces
           "ALT, S, togglespecialworkspace, scratch"
           "ALT SHIFT, S, movetoworkspace, special:scratch"
           "ALT CTRL, S, movetoworkspacesilent, special:scratch"
@@ -295,13 +301,14 @@ in
           "maximize,class:(wm-maximized)"
           "float,class:(python3)"
           "float, class:(firefox), title:(Incrustation vidéo)"
-	  "pin, title:(Incrustation vidéo)"
+          "pin, title:(Incrustation vidéo)"
           "workspace special:spotify, class:^(spotify)$"
+          "workspace special:spotify, class:^(Spotify)$"
         ];
-	layerrule = [
-	  "noanim, hyprpicker"
-	  "noanim, selection"
-	];
+        layerrule = [
+          "noanim, hyprpicker"
+          "noanim, selection"
+        ];
         device = [
           {
             name = "sino-wealth-usb-keyboard";
@@ -332,4 +339,3 @@ in
     };
   };
 }
-

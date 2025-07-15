@@ -11,7 +11,7 @@
       # ./minecraft.nix
       ../../modules/python.nix
     ];
-
+  boot.supportedFilesystems = [ "ntfs" ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

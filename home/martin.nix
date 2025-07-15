@@ -94,6 +94,7 @@
       wakeonlan
       love
       btop
+      azahar
     ]
     ++ lib.optionals (osConfig.networking.hostName == "tower") [
       # ckb-next

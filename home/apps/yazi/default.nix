@@ -4,8 +4,8 @@ let
 	yazi-plugins = pkgs.fetchFromGitHub { 
 		owner = "yazi-rs";
 		repo = "plugins";
-		rev = "4b027c79371af963d4ae3a8b69e42177aa3fa6ee";
-		hash = "sha256-auGNSn6tX72go7kYaH16hxRng+iZWw99dKTTUN91Cow=";
+		rev = "7c174cc0ae1e07876218868e5e0917308201c081";
+		hash = "sha256-RE93ZNlG6CRGZz7YByXtO0mifduh6MMGls6J9IYwaFA=";
   };
 in 
 {
@@ -18,7 +18,7 @@ in
       enableZshIntegration = true;
       shellWrapperName = "y";
       settings = {
-        manager = {
+        mgr = {
           ratio = [ 1 3 4 ];
           sort_by = "natural";
           sort_dir_first = true;
@@ -50,7 +50,7 @@ in
       plugins = {
         chmod = "${yazi-plugins}/chmod.yazi";
         full-border = "${yazi-plugins}/full-border.yazi";
-        max-preview = "${yazi-plugins}/max-preview.yazi";
+        toggle-pane = "${yazi-plugins}/toggle-pane.yazi";
         git = "${yazi-plugins}/git.yazi";
         jump-to-char = "${yazi-plugins}/jump-to-char.yazi";
       };
@@ -59,10 +59,10 @@ in
         require("git"):setup()
       '';
       keymap = {
-        manager.prepend_keymap = [
+        mgr.prepend_keymap = [
           {
             on = "T";
-            run = "plugin --sync max-preview";
+            run = "plugin toggle-pane max-preview";
             desc = "Maximize or restore the preview pane";
           }
           {
