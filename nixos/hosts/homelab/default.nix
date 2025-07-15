@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       # ./minecraft.nix
       ../../modules/python.nix
+      ../../modules/docker.nix
     ];
   boot.supportedFilesystems = [ "ntfs" ];
   # Bootloader.
@@ -79,6 +80,7 @@
     packages = with pkgs; [];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFbvwggs8Cqc7uvAn4R5ORDxW5mfAQVPoiGyyEsQUea martin@nixos"
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQzv/+zBKiuOydoOLf64HtoiUJTXjdY42Gxv3LtXBq2W8XWXyp07ydT57UXgY5wZ42WM3n+jme5gIJAwgcyG/BK8jYDoPQdkEAQUNkl6nQpJflBO7gFG/KYKe3aWSoyY0KUjdpc5Pv5hibhYGfeNwYxJU1Te+gVnA9C9ZWfAU0cnU334esJtJHMcQLxx7zoV3IhS+ha15rs+W5HGITOcjP/+yIm1TRLmWcyvOfUdzr1UVt+OTsG+LBhtNFu2dF//v31xgtVvYFU+zxSb/mhhT2TJkQPPIKnyF+FOv47Kuab/+ysPmxTkmZ0/flera1WztIN8mKn0FrDLksAaw7xvopg+yaDF3o8oRY1OAdLy5x6Gr1XlnisZH2OMRc3UQKEUidFK5NCp2pWz4e0Yp47f/2vyde4OyewQpptSJE0/RxFeeASp2gydJ32VPZMXLAs3n0uxvrLUo9I26wrtP7eRsGOpgmA1iq4HkGgZpjGkqf4CVb41QrYFqwqlu7zbXhi50= marti@pc-martin"
     ];
   };
 
